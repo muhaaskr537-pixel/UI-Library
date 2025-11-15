@@ -1,15 +1,20 @@
--- Loader.lua
--- Connects all modules together and returns library
-
 local Library = {}
-local Core = script:WaitForChild("Core")
+local Core = {}
 
-Library.Window = require(Core:WaitForChild("Window"))
-Library.Tab = require(Core:WaitForChild("Tab"))
-Library.Section = require(Core:WaitForChild("Section"))
-Library.Button = require(Core:WaitForChild("Button"))
-Library.Toggle = require(Core:WaitForChild("Toggle"))
-Library.Slider = require(Core:WaitForChild("Slider"))
-Library.Theme = require(Core:WaitForChild("Theme"))
+Core.Window = loadstring(game:HttpGet("https://raw.githubusercontent.com/muhaaskr537-pixel/UI-Library/main/UI-Library/Core/Window.lua"))()
+Core.Tab = loadstring(game:HttpGet("https://raw.githubusercontent.com/muhaaskr537-pixel/UI-Library/main/UI-Library/Core/Tab.lua"))()
+Core.Section = loadstring(game:HttpGet("https://raw.githubusercontent.com/muhaaskr537-pixel/UI-Library/main/UI-Library/Core/Section.lua"))()
+Core.Button = loadstring(game:HttpGet("https://raw.githubusercontent.com/muhaaskr537-pixel/UI-Library/main/UI-Library/Core/Button.lua"))()
+Core.Toggle = loadstring(game:HttpGet("https://raw.githubusercontent.com/muhaaskr537-pixel/UI-Library/main/UI-Library/Core/Toggle.lua"))()
+Core.Slider = loadstring(game:HttpGet("https://raw.githubusercontent.com/muhaaskr537-pixel/UI-Library/main/UI-Library/Core/Slider.lua"))()
+Core.Theme = loadstring(game:HttpGet("https://raw.githubusercontent.com/muhaaskr537-pixel/UI-Library/main/UI-Library/Core/Theme.lua"))()
+
+Library.Window = Core.Window
+Library.Tab = Core.Tab
+Library.Section = Core.Section
+Library.Button = Core.Button
+Library.Toggle = Core.Toggle
+Library.Slider = Core.Slider
+Library.Theme = Core.Theme
 
 return Library
